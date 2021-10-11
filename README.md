@@ -23,7 +23,7 @@ Write the following user access functions inside `api/users/users-model.js`:
 
 #### 2B - Middleware Functions
 
-Write the following auth middlewares inside `api/auth/auth-middleware.js`:
+Write the following auth middleware inside `api/auth/auth-middleware.js`:
 
 - [√] `restricted`
 - [√] `checkUsernameFree`
@@ -38,7 +38,7 @@ Write the following endpoints. The first one belongs inside `api/users/users-rou
 
 - [ ] `[GET] /api/users`
 - [ ] `[POST] /api/auth/register`
-- [ ] `[POST] /api/auth/login`
+- [√] `[POST] /api/auth/login`
 - [ ] `[GET] /api/auth/logout`
 
 #### Users Schema

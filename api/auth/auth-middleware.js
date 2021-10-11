@@ -12,7 +12,7 @@ function restricted(req, res, next) {
 }
 
 async function checkUsernameFree(req, res, next) {
-  const existingUser = await findBy({ username: req.body.username }).find();
+  const existingUser = await findBy({ username: req.body.username }).first();
   if (existingUser) {
     next({
       status: 422,
@@ -24,7 +24,7 @@ async function checkUsernameFree(req, res, next) {
 }
 
 async function checkUsernameExists(req, res, next) {
-  const existingUser = await findBy({ username: req.body.username }).find();
+  const existingUser = await findBy({ username: req.body.username }).first();
   if (existingUser) {
     next();
   } else {

@@ -5,7 +5,7 @@ function find() {
 }
 
 function findBy(filter) {
-  return db("users").where(filter).orderBy("id");
+  return db("users").where(filter).orderBy("user_id");
 }
 
 function findById(user_id) {
