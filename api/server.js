@@ -2,7 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const session = require("express-session");
-// const Store = require('connect-session-knex')(session);
+const Store = require("connect-session-knex")(session);
 require("dotenv").config();
 
 const usersRouter = require("./users/users-router.js");
@@ -35,8 +35,14 @@ server.use(
     },
     rolling: true,
     resave: false,
-    saveUninitialized: false
-    // store: new Store({})
+    saveUninitialized: false,
+    store: new Store({
+      knex: require("../data/db-config"),
+      tablename: "sessions",
+      sidfieldname: "sid",
+      createtable: true,
+      clearInterval: 1000 * 60 * 60
+    })
   })
 );
 
