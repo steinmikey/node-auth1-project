@@ -25,10 +25,10 @@ Write the following user access functions inside `api/users/users-model.js`:
 
 Write the following auth middlewares inside `api/auth/auth-middleware.js`:
 
-- [ ] `restricted`
-- [ ] `checkUsernameFree`
-- [ ] `checkPasswordLength`
-- [ ] `checkUsernameExists`
+- [√] `restricted`
+- [√] `checkUsernameFree`
+- [√] `checkPasswordLength`
+- [√] `checkUsernameExists`
 
 #### 2C - Endpoints
 
