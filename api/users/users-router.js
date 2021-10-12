@@ -6,11 +6,14 @@ const Users = require("./users-model");
 const router = express.Router();
 
 router.get("/", restricted, (req, res, next) => {
+  // const users = await Users.find();
+  // console.log(users, "userz here");
+  // res.status(200).json({ michael: "hey there" });
   Users.find()
     .then((users) => {
       res.status(200).json(users);
     })
-    .catch(next());
+    .catch(next);
 });
 /**
   [GET] /api/users
@@ -27,12 +30,6 @@ router.get("/", restricted, (req, res, next) => {
     },
     // etc
   ]
-
-  response on non-authenticated:
-  status 401
-  {
-    "message": "You shall not pass!"
-  }
  */
 
 module.exports = router;
